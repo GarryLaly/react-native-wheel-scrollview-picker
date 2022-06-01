@@ -34,6 +34,7 @@ const isViewStyle = (style: ViewProps["style"]): style is ViewStyle => {
 export type ScrollPickerProps = {
   style?: ViewProps["style"];
   containerStyle?: object;
+  highlightStyle?: object;
   dataSource: Array<string | number>;
   selectedIndex?: number;
   onValueChange?: (
@@ -60,6 +61,7 @@ export default function ScrollPicker({
   itemHeight = 30,
   style,
   containerStyle,
+  highlightStyle,
   scrollViewComponent,
   ...props
 }: ScrollPickerProps): JSX.Element {
@@ -223,7 +225,7 @@ export default function ScrollPicker({
 
   return (
     <View style={[wrapperStyle, containerStyle]}>
-      <View style={highlightStyle} />
+      <View style={[highlightStyle, highlightStyle]} />
       <CustomScrollViewComponent
         ref={sView}
         bounces={false}
