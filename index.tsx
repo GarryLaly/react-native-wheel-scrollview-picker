@@ -210,7 +210,7 @@ export default function ScrollPicker({
     overflow: "hidden",
   };
 
-  const highlightStyle: ViewStyle = {
+  const currentHighlightStyle: ViewStyle = {
     position: "absolute",
     top: (wrapperHeight - itemHeight) / 2,
     height: itemHeight,
@@ -225,7 +225,7 @@ export default function ScrollPicker({
 
   return (
     <View style={[wrapperStyle, containerStyle]}>
-      <View style={[highlightStyle, highlightStyle]} />
+      <View style={[currentHighlightStyle, highlightStyle]} />
       <CustomScrollViewComponent
         ref={sView}
         bounces={false}
