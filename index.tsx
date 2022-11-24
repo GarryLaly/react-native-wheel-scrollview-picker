@@ -10,7 +10,7 @@ import {
   View,
   ViewProps,
   ViewStyle,
-} from "react-native";
+} from "react-native-web";
 
 function isNumeric(str: string | unknown): boolean {
   if (typeof str === "number") return true;
